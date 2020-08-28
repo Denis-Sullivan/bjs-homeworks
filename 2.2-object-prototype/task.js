@@ -1,11 +1,20 @@
-//String.prototype.isPalindrome - для задачи №1
+"use strict";
+
+//задача 1
+
+String.prototype.isPalindrome = function() {
+    return    this.split(' ').join('').toLowerCase() ==
+    this.split(' ').join('').split('').reverse().join('').toLowerCase();
+};
+
+
+//задача 2
 
 function getAverageMark(marks) {
-    // код для задачи №2 писать здесь
-    // return averageMark
-}
-
-function checkBirthday(birthday) {
-    // код для задачи №3 писать здесь
-    // return verdict
-}
+    if (marks.length > 0) {
+    return Math.round(marks.reduce((lastValue, currentValue) => currentValue += lastValue) / marks.length);
+    }
+    else {
+    return 0;
+    };
+};
